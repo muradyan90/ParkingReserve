@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "323783262910",
+    "firebase_url": "https://parkingreserve-bee83.firebaseio.com",
+    "project_id": "parkingreserve-bee83",
+    "storage_bucket": "parkingreserve-bee83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323783262910:android:5132b5366b044f7f",
+        "android_client_info": {
+          "package_name": "com.example.parkingreserve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "323783262910-sgrpcshnbbdseqopusnmoaf1fpmv223p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.parkingreserve",
+            "certificate_hash": "e1c9dfef8fe7689826737f0120e0be69527526e3"
+          }
+        },
+        {
+          "client_id": "323783262910-bj73c6nudoraked7e8huivumhtorrb4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGCAinM274cehwu87yGZb1c_Bu7wPtKaw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "323783262910-bj73c6nudoraked7e8huivumhtorrb4b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

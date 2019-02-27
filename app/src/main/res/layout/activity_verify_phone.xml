@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".VerifyPhoneActivity">
+
 
     <TextView
         android:id="@+id/text_signIn"
@@ -25,48 +24,48 @@
         app:layout_constraintTop_toBottomOf="@id/text_signIn"
         android:layout_width="wrap_content"
         android:layout_height="350dp" />
-<LinearLayout
-    android:weightSum="100"
-    android:id="@+id/lineral_id"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/sign_in_image"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <TextView
-        android:text="@string/am_phone_code"
-        android:textSize="20sp"
-        android:id="@+id/am_phone"
+    <LinearLayout
+        android:weightSum="100"
+        android:id="@+id/lineral_id"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sign_in_image"
-        app:layout_constraintEnd_toStartOf="@id/sign_in_number_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:textSize="20sp"
-        android:layout_marginStart="20dp"
-        android:hint="@string/num_hint"
-        android:id="@+id/sign_in_number_input"
-        android:inputType="phone"
-
-        android:maxLength="8"
-        app:layout_constraintStart_toEndOf="@id/am_phone"
-        app:layout_constraintTop_toBottomOf="@id/sign_in_image"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+
+        <EditText
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+            android:id="@+id/code_input"
+            android:inputType="phone"
+            android:hint="enter code"
+            android:maxLength="8"
+            app:layout_constraintStart_toEndOf="@id/am_phone"
+            app:layout_constraintTop_toBottomOf="@id/sign_in_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
     <Button
-        android:id="@+id/sign_in_next_btn"
-        android:text="@string/next"
+        android:id="@+id/sign_in_btn"
+        android:text="@string/sign_in"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lineral_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
 
+    <ProgressBar
+        android:visibility="gone"
+         android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sign_in_btn" />
 
 
 </android.support.constraint.ConstraintLayout>
