@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "323783262910-1tlhh324qo745e7oegn0osjf05lgh6as.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.parkingreserve",
+            "certificate_hash": "a5d6bc78bf3bc60ee873c022bed13cf308dc23ce"
+          }
+        },
+        {
           "client_id": "323783262910-bj73c6nudoraked7e8huivumhtorrb4b.apps.googleusercontent.com",
           "client_type": 3
         }

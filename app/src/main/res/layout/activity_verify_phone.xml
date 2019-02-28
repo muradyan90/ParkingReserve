@@ -19,7 +19,7 @@
         android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/sign_in_image"
-        android:src="@drawable/registration_img"
+        android:src="@drawable/registration_img1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_signIn"
         android:layout_width="wrap_content"
