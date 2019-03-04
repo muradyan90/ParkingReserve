@@ -2,5 +2,18 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="Black">#000000</color>
+    <color name="Blue">#08D9E2</color>
+    <color name="DarkBlue">#161C50</color>
+    <color name="White">#DAD0D5</color>
+    <color name="Yellow">#E7D918</color>
+    <color name="Green">#2FB419</color>
+    <color name="DarkGreen">#245705</color>
+    <color name="Pink">#DD2062</color>
+    <color name="Violet">#B610B3</color>
+    <color name="Champagne">#F3D0A0</color>
+    <color name="Grey">#83817F</color>
+    <color name="colorAccent">#5CA3C0</color>
+
+
 </resources>
