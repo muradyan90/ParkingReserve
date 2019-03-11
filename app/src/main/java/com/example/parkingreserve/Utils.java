@@ -282,6 +282,12 @@ public class Utils {
 
 
 
+    public static final String AM_PHONE_CODE = "+374";
+    public static final String PHONE_INTENT_KEY="phone number";
+    public static final String PLATE_INTENT_KEY="plate number";
+    public static final String COLOR_INTENT_KEY="car color";
+    public static final String MODEL_INTENT_KEY="car model";
+
 
 
 

@@ -18,6 +18,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
@@ -36,7 +38,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_phone);
 
-        final String phoneNumber=getIntent().getStringExtra(MainActivity.PHONE_INTENT_KEY);
+        final String phoneNumber=getIntent().getStringExtra(Utils.PHONE_INTENT_KEY);
 
         sendVerificationCode(phoneNumber);
 
@@ -83,9 +85,12 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
                        if (task.isSuccessful()){
 
+                           userDataToFbase();
                            Intent intent=new Intent(VerifyPhoneActivity.this,MapActivity.class);
                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                            startActivity(intent);
+
+
                        }
                        else {
                            Toast.makeText(VerifyPhoneActivity.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
@@ -118,7 +123,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
             String code=phoneAuthCredential.getSmsCode();
             if (code!=null){
-               // progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
                 codeInput.setText(code);
                 verifyCode(code);
             }
@@ -131,4 +136,15 @@ public class VerifyPhoneActivity extends AppCompatActivity {
             Toast.makeText(VerifyPhoneActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
         }
     };
+
+
+    public void userDataToFbase(){
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref=database.getReference("User").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        ref.child("Color").setValue(getIntent().getStringExtra(Utils.COLOR_INTENT_KEY));
+        ref.child("Model").setValue(getIntent().getStringExtra(Utils.MODEL_INTENT_KEY));
+        ref.child("Plate").setValue(getIntent().getStringExtra(Utils.PLATE_INTENT_KEY));
+        ref.child("Phone").setValue(getIntent().getStringExtra(Utils.PHONE_INTENT_KEY));
+    }
 }

@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_signIn"
         android:layout_width="wrap_content"
-        android:layout_height="350dp" />
+        android:layout_height="200dp" />
 
     <LinearLayout
         android:id="@+id/hiding_layout"

@@ -27,8 +27,7 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 public class MainActivity extends AppCompatActivity {
 
 
-    public static final String AM_PHONE_CODE = "+374";
-    public static final String PHONE_INTENT_KEY="phone number";
+
 
     EditText numberInput;
     Button nextBtn;
@@ -79,16 +78,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
                 sNum=numberInput.getText().toString();
                 sPlate=plateNumber.getText().toString();
 
                 if (isChecked()) {
 
 
-                    String phoneNumber = AM_PHONE_CODE.concat(sNum);
+                   sNum = Utils.AM_PHONE_CODE.concat(sNum);
 
                     Intent intent = new Intent(MainActivity.this, VerifyPhoneActivity.class);
-                    intent.putExtra(PHONE_INTENT_KEY, phoneNumber);
+                    intent.putExtra(Utils.PHONE_INTENT_KEY, sNum);
+                     intent.putExtra(Utils.MODEL_INTENT_KEY,sModel);
+                     intent.putExtra(Utils.COLOR_INTENT_KEY,sColor);
+                     intent.putExtra(Utils.PLATE_INTENT_KEY,sPlate);
                     startActivity(intent);
                 }
             }
@@ -181,32 +185,25 @@ public boolean isChecked(){
     if (sNum==null || sNum.length()<8){
         numberInput.setError("valid number is required");
         numberInput.requestFocus();
-
         counter++;
-
     }
    if (sModel==null){
 
         selectCarModel.setError("car model is required");
         selectCarModel.requestFocus();
-
         counter++;
-
     }
     if (sColor==null){
 
         selectCarColor.setError("car color is required");
         selectCarColor.requestFocus();
-
         counter++;
-
     }
     if (sPlate.length()<7){
        plateNumber.setError("valid number is required");
        plateNumber.requestFocus();
         counter++;
     }
-
 
 if (counter>0){
     return false;
