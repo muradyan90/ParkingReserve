@@ -155,7 +155,7 @@ public class MapActivity extends FragmentActivity implements  OnMapReadyCallback
             public boolean onMarkerClick(Marker marker) {
                 Toast.makeText(getApplicationContext(),"OnClick",Toast.LENGTH_SHORT).show();
                 Log.i("LOG","ONCLICK");
-
+                    
                 return true;
             }
         });
@@ -176,7 +176,7 @@ public class MapActivity extends FragmentActivity implements  OnMapReadyCallback
 
         mLastLocation=location;
         LatLng latLng=new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
-     //   mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(17.5f));
         getShareParkingAround();
 
@@ -194,8 +194,8 @@ public class MapActivity extends FragmentActivity implements  OnMapReadyCallback
     public void onConnected(@Nullable Bundle bundle) {
 
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(1000);
-        mLocationRequest.setFastestInterval(1000);
+        mLocationRequest.setInterval(5000);
+        mLocationRequest.setFastestInterval(5000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
