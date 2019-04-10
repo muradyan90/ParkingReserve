@@ -8,7 +8,7 @@
     <string name="sign_in">Sign In</string>
     <string name="next">next</string>
     <string name="num_hint">77 123456</string>
-    <string name="am_phone_code">+374</string>
+    <string name="am_phone_code">"  "+374</string>
     <string name="title_activity_map">MapActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -21,6 +21,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_logged_user">LoggedUserActivity</string>
     <string name="title_activity_share_parking">Map</string>
+    <string name="title_activity_maps_main">MapsMainActivity</string>
+    <string name="title_activity_maps_to_start_actions">MapsToStartActions</string>
 
 
 </resources>

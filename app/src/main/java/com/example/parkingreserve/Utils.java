@@ -9,22 +9,7 @@ import java.util.Map;
 public class Utils {
 
 
-    public static final String carModelList[]={"Автокам",
-            "Бронто",
-            "ГАЗ",
-            "Ё-мобиль",
-            "ЗАЗ",
-            "ЗИЛ",
-            "ЗиС",
-            "ИЖ",
-            "Канонир",
-            "Комбат",
-            "ЛуАЗ",
-            "Москвич",
-            "СМ",
-            "ТагАЗ",
-            "УАЗ",
-            "Эксклюзив",
+    public static final String carModelList[]={
             "AC",
             "Acura",
             "Adler",
@@ -34,7 +19,6 @@ public class Utils {
             "AM General",
             "AMC",
             "Ariel",
-            "Aro",
             "Asia",
             "Aston Martin",
             "Audi",
@@ -248,7 +232,22 @@ public class Utils {
             "Zenvo",
             "Zibar",
             "Zotye",
-            "ZX"};
+            "ZX","Автокам",
+            "Бронто",
+            "ГАЗ",
+            "Ё-мобиль",
+            "ЗАЗ",
+            "ЗИЛ",
+            "ЗиС",
+            "ИЖ",
+            "Канонир",
+            "Комбат",
+            "ЛуАЗ",
+            "Москвич",
+            "СМ",
+            "ТагАЗ",
+            "УАЗ",
+            "Эксклюзив"};
 
 
     public static final HashMap<Integer,String> getCarColorList(Context context){
@@ -268,6 +267,7 @@ public class Utils {
         carColorlist.put(context.getResources().getColor(R.color.Green),"Green");
         carColorlist.put(context.getResources().getColor(R.color.Grey),"Grey");
         carColorlist.put(context.getResources().getColor(R.color.Pink),"Pink");
+        carColorlist.put(context.getResources().getColor(R.color.Red),"Red");
 
         return carColorlist;
     }
@@ -287,6 +287,23 @@ public class Utils {
     public static final String PLATE_INTENT_KEY="plate number";
     public static final String COLOR_INTENT_KEY="car color";
     public static final String MODEL_INTENT_KEY="car model";
+    public static final String SHARED_LOCATION="SharedLocation";
+    public static final String INCOMER_LOCATION="IncomerLocation";
+    public static final String FIREBASE_ROOT="User";
+
+
+
+
+
+
+
+
+
+  public static final   String INFO_MINUTES="selected minutes";
+   public static final  String WAITING="waiting ...";
+  public static final String INCOMER_INFO="current location";
+  public static final String NO_GPS="no GPS connection";
+
 
 
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-
+  android:layout_margin="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_margin="5dp"
         android:id="@+id/text_signIn"
         android:paddingTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,23 +20,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <ImageView
+
         android:id="@+id/sign_in_image"
         android:src="@drawable/registration_img1"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_signIn"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp" />
+        android:layout_width="400dp"
+        android:layout_height="300dp" />
 
-    <LinearLayout
-        android:id="@+id/hiding_layout"
-        android:weightSum="3"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/sign_in_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<LinearLayout
+    app:layout_constraintTop_toBottomOf="@id/sign_in_image"
+    android:id="@+id/hiding_layout"
+    android:weightSum="3"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
 
         <TextView
-            android:visibility="gone"
+
+            android:layout_marginTop="2dp"
+            android:layout_margin="3dp"
+            app:layout_constraintTop_toBottomOf="@id/sign_in_image"
             android:id="@+id/model_hide"
             android:gravity="center"
             android:layout_weight="1"
@@ -44,118 +52,121 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
-            android:visibility="gone"
+            android:layout_marginTop="2dp"
+            android:layout_margin="3dp"
+            app:layout_constraintTop_toBottomOf="@id/sign_in_image"
             android:id="@+id/color_hide"
-            android:gravity="center"
+           android:gravity="right"
             android:layout_weight="1"
             android:textStyle="italic"
             android:text="color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
-            android:visibility="gone"
+            android:layout_marginTop="2dp"
+            android:layout_margin="3dp"
+            app:layout_constraintTop_toBottomOf="@id/sign_in_image"
+
             android:id="@+id/number_hide"
-            android:gravity="center"
+            android:gravity="right"
             android:layout_weight="1"
             android:textStyle="italic"
-            android:text="number"
+            android:text="plate number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+</LinearLayout>
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:weightSum="3"
-        android:padding="5dp"
-        android:id="@+id/car_setup_layout"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hiding_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <TextView
-            style="@android:style/Widget.EditText"
-            android:layout_weight="1"
-            android:padding="2dp"
-            android:gravity="center"
-            android:id="@+id/car_model_select"
-            android:textSize="20sp"
-            android:text="Car Model"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            style="@android:style/Widget.EditText"
-            android:layout_weight="1"
-            android:padding="2dp"
-           android:gravity="center"
-            android:id="@+id/car_color_select"
-            android:text="color"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:layout_weight="1"
-            android:padding="2dp"
-           android:gravity="center"
-            android:id="@+id/car_plate_input"
-            android:hint="number"
-            android:maxLength="7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
-
-    </LinearLayout>
 
 
 <LinearLayout
-    android:weightSum="100"
-    android:id="@+id/lineral_id"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/car_setup_layout"
+    android:id="@+id/car_setuplayout"
+    app:layout_constraintTop_toBottomOf="@id/hiding_layout"
+    app:layout_constraintStart_toStartOf="@id/sign_in_image"
+    android:weightSum="3"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
     <TextView
-        android:text="@string/am_phone_code"
+
+
+        android:layout_weight="1"
+        android:padding="2dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/car_model_select"
         android:textSize="20sp"
-        android:id="@+id/am_phone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sign_in_image"
-        app:layout_constraintEnd_toStartOf="@id/sign_in_number_input"
+        android:text="choose"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-  <EditText
 
+    <TextView
+
+
+        android:layout_weight="1"
+        android:padding="2dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/car_color_select"
+        android:text="choose"
         android:textSize="20sp"
-        android:layout_marginStart="20dp"
-        android:hint="@string/num_hint"
-        android:id="@+id/sign_in_number_input"
-        android:inputType="phone"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
 
-        android:maxLength="8"
-        app:layout_constraintStart_toEndOf="@id/am_phone"
-        app:layout_constraintTop_toBottomOf="@id/sign_in_image"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:padding="2dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/car_plate_input"
+        android:hint="input"
+        android:maxLength="7"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
 
 
 
-    <Button
 
+
+    <TextView
+        android:layout_marginTop="20dp"
+       android:textStyle="bold"
+        android:text="@string/am_phone_code"
+        android:textSize="20sp"
+        android:id="@+id/am_phone"
+        app:layout_constraintStart_toStartOf="@id/text_signIn"
+        app:layout_constraintTop_toBottomOf="@id/car_setuplayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+  <EditText
+      android:layout_marginTop="20dp"
+       android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:hint="@string/num_hint"
+        android:id="@+id/sign_in_number_input"
+        android:inputType="phone"
+        android:maxLength="8"
+        app:layout_constraintStart_toEndOf="@id/am_phone"
+        app:layout_constraintTop_toBottomOf="@id/car_setuplayout"
+      app:layout_constraintBottom_toBottomOf="@id/am_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+    <Button
+        android:background="@color/ButtonColor"
+        android:layout_marginTop="10dp"
+        android:layout_margin="5dp"
         android:id="@+id/sign_in_next_btn"
         android:text="@string/next"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lineral_id"
+        android:textStyle="bold"
+         android:textColor="@color/ExtraWhite"
+        app:layout_constraintStart_toStartOf="@id/text_signIn"
+        app:layout_constraintTop_toBottomOf="@id/sign_in_number_input"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />

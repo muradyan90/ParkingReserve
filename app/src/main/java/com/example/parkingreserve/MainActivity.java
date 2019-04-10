@@ -175,6 +175,8 @@ public void initViews(){
      colorHide=findViewById(R.id.color_hide);
      modelHide=findViewById(R.id.model_hide);
 
+
+
 }
 
 
@@ -204,6 +206,8 @@ public boolean isChecked(){
        plateNumber.requestFocus();
         counter++;
     }
+
+
 
 if (counter>0){
     return false;

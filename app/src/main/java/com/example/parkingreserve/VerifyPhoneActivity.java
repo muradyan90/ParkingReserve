@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -94,7 +95,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                        }
                        else {
                            Toast.makeText(VerifyPhoneActivity.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
-
+                           Log.i("LOG",task.getException().getMessage());
                        }
 
 
@@ -138,13 +139,27 @@ public class VerifyPhoneActivity extends AppCompatActivity {
     };
 
 
+    User currentUser=new User();
+
+
     public void userDataToFbase(){
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref=database.getReference("User").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        ref.child("Color").setValue(getIntent().getStringExtra(Utils.COLOR_INTENT_KEY));
-        ref.child("Model").setValue(getIntent().getStringExtra(Utils.MODEL_INTENT_KEY));
-        ref.child("Plate").setValue(getIntent().getStringExtra(Utils.PLATE_INTENT_KEY));
-        ref.child("Phone").setValue(getIntent().getStringExtra(Utils.PHONE_INTENT_KEY));
+      //  DatabaseReference ref=database.getReference(Utils.FIREBASE_ROOT);
+
+        DatabaseReference ref=database.getReference(Utils.FIREBASE_ROOT).child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+//        ref.child("Color").setValue(getIntent().getStringExtra(Utils.COLOR_INTENT_KEY));
+//        ref.child("Model").setValue(getIntent().getStringExtra(Utils.MODEL_INTENT_KEY));
+//        ref.child("Plate").setValue(getIntent().getStringExtra(Utils.PLATE_INTENT_KEY));
+//        ref.child("Phone").setValue(getIntent().getStringExtra(Utils.PHONE_INTENT_KEY));
+        currentUser.setColor(getIntent().getStringExtra(Utils.COLOR_INTENT_KEY));
+        currentUser.setModel(getIntent().getStringExtra(Utils.MODEL_INTENT_KEY));
+        currentUser.setPlate(getIntent().getStringExtra(Utils.PLATE_INTENT_KEY));
+        currentUser.setPhone(getIntent().getStringExtra(Utils.PHONE_INTENT_KEY));
+        currentUser.setUserId(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        ref.push().setValue(currentUser);
+
+
+
     }
 }
